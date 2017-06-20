@@ -1,0 +1,21 @@
+{
+  "name": "mongo-scraper",
+  "version": "1.0.0",
+  "description": "Web app that lets users leave comments on the latest news.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Linette Hsu",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cheerio": "^1.0.0-rc.1",
+    "express": "^4.15.3",
+    "express-handlebars": "^3.0.0",
+    "mongoose": "^4.10.6",
+    "morgan": "^1.7.0",
+    "request": "^2.81.0"
+  }
+}

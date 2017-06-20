@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="col-md-12 jumbotron">
+        <h1> Mongo Scraper</h1>
+
+        <button type="button" class="btn btn-info" id="home">Home</button>
+
+        <button type="button" class="btn btn-primary" id="scrape">Scrape Articles</button>
+
+        <button type="button" class="btn btn-warning" id="saved-articles">Saved Articles</button>
+    </div>
+    <div class="col-md-12">
+        {{#if article}}
+            {{#each article}}
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h4>{{this.title}}</h4>
+                    <p> {{this.summary}}</p>
+                    <button type="button" class="btn btn-success save" data-id={{this._id}}>Save Article</button>
+                </div>
+            </div>
+            {{/each}}
+        {{else}}
+        <div class="panel panel-default">
+            <div class="panel-body">
+            <h4>Uh Oh. Looks like we don't have any new articles.</h4>
+            </div>
+         </div>
+        {{/if}}
+    </div>
+</div>
