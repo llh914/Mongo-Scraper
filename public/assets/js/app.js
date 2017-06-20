@@ -1,3 +1,4 @@
+//Handle Scrape button
 $("#scrape").on("click", function() {
     $.ajax({
         method: "GET",
@@ -8,36 +9,35 @@ $("#scrape").on("click", function() {
     })
 });
 
-$("#saved-articles").on("click", function() {
-    window.location.href = "/saved";
+//Set clicked nav option to active
+$(".navbar-nav li").click(function() {
+   $(".navbar-nav li").removeClass("active");
+   $(this).addClass("active");
 });
 
-$("#home").on("click", function() {
-    window.location.href = "/";
-});
-
+//Handle Save Article button
 $(".save").on("click", function() {
     var thisId = $(this).attr("data-id");
     $.ajax({
         method: "POST",
         url: "/articles/save/" + thisId
     }).done(function(data) {
-//        alert("Article Saved!")
         window.location = "/"
     })
 });
 
+//Handle Delete Article button
 $(".delete").on("click", function() {
     var thisId = $(this).attr("data-id");
     $.ajax({
         method: "POST",
         url: "/articles/delete/" + thisId
     }).done(function(data) {
-//        alert("Article Deleted!")
         window.location = "/saved"
     })
 });
 
+//Handle Save Note button
 $(".saveNote").on("click", function() {
     var thisId = $(this).attr("data-id");
     if (!$("#noteText" + thisId).val()) {
@@ -60,6 +60,7 @@ $(".saveNote").on("click", function() {
     }
 });
 
+//Handle Delete Note button
 $(".deleteNote").on("click", function() {
     var noteId = $(this).attr("data-note-id");
     var articleId = $(this).attr("data-article-id");
