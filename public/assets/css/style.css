@@ -6,3 +6,7 @@
     display: inline-block;
     width: 90%
 }
+
+body {
+    background-color: red;
+}
