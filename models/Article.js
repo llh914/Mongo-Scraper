@@ -1,5 +1,6 @@
 // Require mongoose
 var mongoose = require("mongoose");
+var Note = require("./Note");
 // Create Schema class
 var Schema = mongoose.Schema;
 
@@ -19,11 +20,10 @@ var ArticleSchema = new Schema({
     type: Boolean,
     default: false
   },
-  // This only saves one note's ObjectId, ref refers to the Note model
-  note: {
-    type: Schema.Types.ObjectId,
-    ref: "Note"
-  }
+  notes: [{
+     type: Schema.Types.ObjectId,
+     ref: "Note"
+  }]
 });
 
 // Create the Article model with the ArticleSchema

@@ -8,7 +8,12 @@ var NoteSchema = new Schema({
   // Just a string
   body: {
     type: String
-  }
+  },
+ // This only saves one note's ObjectId, ref refers to the Note model
+ article: {
+   type: Schema.Types.ObjectId,
+   ref: "Article"
+ }
 });
 
 // Remember, Mongoose will automatically save the ObjectIds of the notes
