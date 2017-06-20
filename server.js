@@ -54,9 +54,6 @@ db.once("open", function() {
   console.log("Mongoose connection successful.");
 });
 
-//// Import routes and give the server access to them.
-//require("./controller/routes.js")(app);
-
 // Routes
 // ======
 
