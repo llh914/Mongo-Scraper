@@ -10,17 +10,17 @@
                     {{#each this.notes}}
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <p> {{this.body}}</p>
+                                <p class="previousNotes"> {{this.body}}</p>
                                 <button type="button" class="btn btn-danger deleteNote" data-note-id={{this._id}} data-article-id={{this.article}}>X</button>
                             </div>
                         </div>
                     {{/each}}
                 {{else}}
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <h4>No notes for this article yet.</h4>
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <h4>No notes for this article yet.</h4>
+                        </div>
                     </div>
-                </div>
                 {{/if}}
                 <div class="form-group">
                     <textarea id="noteText{{this._id}}" class="form-control" rows="4" placeholder="New Note"></textarea>

@@ -1,0 +1,8 @@
+.deleteNote {
+	display: inline-block;
+}
+
+.previousNotes {
+    display: inline-block;
+    width: 90%
+}

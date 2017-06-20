@@ -1,19 +1,25 @@
 <div class="container">
 
     <div class="col-md-12 jumbotron">
-        <h1> Saved Articles</h1>
+        <div class="text-center">
+            <h1> Saved Articles</h1>
 
-        <button type="button" class="btn btn-info" id="home">Home</button>
+            <button type="button" class="btn btn-info" id="home">Home</button>
 
-        <button type="button" class="btn btn-warning" id="saved-articles">Saved Articles</button>
+            <button type="button" class="btn btn-warning" id="saved-articles">Saved Articles</button>
+        </div>
     </div>
     <div class="col-md-12">
         {{#if article}}
             {{#each article}}
                 <div class="panel panel-default">
-                    <div class="panel-body">
+                    <div class="panel-heading">
                         <h4>{{this.title}}</h4>
+                    </div>
+                    <div class="panel-body">
                         <p> {{this.summary}}</p>
+                        <a href={{this.link}} target="_blank">{{this.link}}</a>
+                        <br><br>
                         <button type="button" class="btn btn-success addNote" data-toggle="modal" data-target="#noteModal{{this._id}}" data-id={{this._id}}>Add a Note</button>
                         <button type="button" class="btn btn-danger delete" data-id={{this._id}}>Delete</button>
                     </div>
