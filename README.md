@@ -1,7 +1,7 @@
 # New York Times Article Scraper
 
 ## Overview
-An app that Scrapes artices from the New York Times websites and lets users leave comments on the latest news.
+An app that scrapes articles from the New York Times website and lets users save articles and leave comments on the latest news.
 
 ![Website](https://github.com/llh914/Mongo-Scraper/blob/master/public/assets/images/nyt.png)
 
