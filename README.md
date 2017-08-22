@@ -1,9 +1,9 @@
-# Superhero Hangman
+# New York Times Article Scraper
 
 ## Overview
 An app that Scrapes artices from the New York Times websites and lets users leave comments on the latest news.
 
-![Website](https://github.com/llh914/mongo-scraper/blob/master/assets/images/nyt.png)
+![Website](https://github.com/llh914/Mongo-Scraper/blob/master/public/assets/images/nyt.png)
 
 ## How It Works
 - Scrape articles by
