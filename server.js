@@ -41,8 +41,8 @@ app.engine("handlebars", exphbs({
 app.set("view engine", "handlebars");
 
 // Database configuration with mongoose
-mongoose.connect("mongodb://heroku_jmv816f9:5j1nd4taq42hi29bfm5hobeujd@ds133192.mlab.com:33192/heroku_jmv816f9");
-//mongoose.connect("mongodb://localhost/mongoscraper");
+//mongoose.connect("mongodb://heroku_jmv816f9:5j1nd4taq42hi29bfm5hobeujd@ds133192.mlab.com:33192/heroku_jmv816f9");
+mongoose.connect("mongodb://localhost/mongoscraper");
 var db = mongoose.connection;
 
 // Show any mongoose errors
@@ -91,9 +91,17 @@ app.get("/scrape", function(req, res) {
       var result = {};
 
       // Add the title and summary of every link, and save them as properties of the result object
-      result.title = $(this).children("h2").text();
-      result.summary = $(this).children(".summary").text();
-      result.link = $(this).children("h2").children("a").attr("href");
+
+      summary = ""
+      if ($(this).find("ul").length) {
+        summary = $(this).find("li").first().text();
+      } else {
+        summary = $(this).find("p").text();
+      };
+
+      result.title = $(this).find("h2").text();
+      result.summary = summary;
+      result.link = "https://www.nytimes.com" + $(this).find("a").attr("href");
 
       // Using our Article model, create a new entry
       // This effectively passes the result object to the entry (and the title and link)
@@ -112,10 +120,10 @@ app.get("/scrape", function(req, res) {
       });
 
     });
-        res.send("Scrape Complete");
+      // Tell the browser that we finished scraping the text
+       res.send("Scrape Complete");
 
   });
-  // Tell the browser that we finished scraping the text
 });
 
 // This will get the articles we scraped from the mongoDB
